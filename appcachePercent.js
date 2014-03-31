@@ -1,7 +1,7 @@
 // Some of this is from 
 // Eric Bidelman's Article "A Beginner's Guide to Using the Application Cache"
 // http://www.html5rocks.com/en/tutorials/appcache/beginner/
-// and this thing http://www.whatwg.org/specs/web-apps/current-work/#event-appcache-cached
+// also this: http://www.whatwg.org/specs/web-apps/current-work/
 
 // appcahce stuff
 var appCache = window.applicationCache;
