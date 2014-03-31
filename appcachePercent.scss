@@ -1,0 +1,93 @@
+#prog {
+	@include border-radius(60px);
+	@include box-shadow(0 5px 20px 0 rgba(0,0,0,0.125));
+	@include background-clip(padding-box);
+	-webkit-pointer-events: none;
+	pointer-events: none;
+	@include user-select(none);
+	z-index: 2000;
+	position: fixed;
+	margin: auto;
+	top: 12px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 870px;
+	height: 60px;
+	border: 3px solid #fff;
+	@include background-image(linear-gradient(bottom, rgba(250,249,248,0) 0%,rgba(250,249,248,0) 44%,rgba(250,249,248,1) 45%,rgba(250,249,248,1) 100%));
+	background-color: #f4f2f1;
+	@include opacity(1);
+	@include transition(.5s);
+
+	&.hidden {
+		@include opacity(0);
+		@include transition(.5s);
+	}
+
+	span {
+		position: absolute;
+		width: 100%;
+		display: block;
+		text-align: center;
+		font-size: 25px;
+		color: #026f89;	
+		font-weight: bold;
+		line-height: 50px;
+
+		&#prog-percent {
+			bottom: 100%;
+		}
+
+		&.prog-loading {
+			top: 100%;
+			text-transform: uppercase;
+		}
+	}
+
+	#prog-inner {
+		@include border-radius(54px);
+		@include background-clip(padding-box);
+		@include transition-property(width);
+		@include transition-duration(.125s);
+		width: 0;
+		min-width: 54px;
+		max-width: 864px;
+		z-index: 2000;
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 54px;
+		@include background-image(linear-gradient(45deg, rgba(255, 180, 0, .9) 25%, transparent 25%, transparent 50%, rgba(255, 180, 0, .9) 50%, rgba(255, 180, 0, .9) 75%, transparent 75%, transparent));
+		@include background-size(54px 54px);
+		-webkit-animation: animatedBackground 1s linear infinite;
+		-moz-animation: animatedBackground 1s linear infinite;
+		-ms-animation: animatedBackground 1s linear infinite;
+		-o-animation: animatedBackground 1s linear infinite;
+		animation: animatedBackground 1s linear infinite;
+		color: #00d3dd;
+	}
+}
+
+/* animation for loading bar */
+@-webkit-keyframes animatedBackground {
+	0% { background-position: 0 0; }
+	100% { background-position: 55px 0; }
+}
+@-moz-keyframes animatedBackground {
+	0% { background-position: 0 0; }
+	100% { background-position: 55px 0; }
+}
+@-o-keyframes animatedBackground {
+	0% { background-position: 0 0; }
+	100% { background-position: 55px 0; }
+}
+@-ms-keyframes animatedBackground {
+	0% { background-position: 0 0; }
+	100% { background-position: 55px 0; }
+}
+@keyframes animatedBackground {
+	0% { background-position: 0 0; }
+	100% { background-position: 55px 0; }
+}
