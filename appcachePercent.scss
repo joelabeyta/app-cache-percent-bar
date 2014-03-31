@@ -4,7 +4,12 @@
 	@include background-clip(padding-box);
 	-webkit-pointer-events: none;
 	pointer-events: none;
-	@include user-select(none);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 	z-index: 2000;
 	position: fixed;
 	margin: auto;
