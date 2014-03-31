@@ -4,6 +4,20 @@ ____________
 Joel Abeyta
 joel.abeyta@gmail.com
 
+
+CONTENTS
+____________
+
+appcachePercent.css
+appcachePercent.js
+appcachePercent.scss
+example.manifest
+index.html
+readme.txt
+
+Watch out!!! The sass file (appcachePercent.scss) uses compass plugins.
+
+
 ABOUT
 ____________
 
