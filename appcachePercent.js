@@ -44,20 +44,28 @@ function progressEvent(e) {
 	var progInner = document.getElementById('prog-inner');
 	var progPercent = document.getElementById('prog-percent');
 
-	// update the percent
-	totalfiles = Number(e.total);
-	cacheProg = cacheProg + 1;
-	var progWidth = Math.round(cacheProg / totalfiles * 100);
+	if (e.lengthComputable) {
+		// update the percent
+		totalfiles = Number(e.total);
+		cacheProg = cacheProg + 1;
+		var progWidth = Math.round(cacheProg / totalfiles * 100);
 
-	// update the numerical percent
-	progPercent.innerHTML = progWidth - 1 +'%';
+		// update the numerical percent
+		progPercent.innerHTML = progWidth - 1 +'%';
 
-	// update the width of the percent bar
-	progInner.style.width = progWidth - 1 +'%';
+		// update the width of the percent bar
+		progInner.style.width = progWidth - 1 +'%';
 
-	// when it's done, run the loading done function
-	if(cacheProg >= totalfiles) {
-		loadingDone();
+		// when it's done, run the loading done function
+		if(cacheProg >= totalfiles) {
+			loadingDone();
+		}
+	} else { // looking at you, Firefox :/
+		// delete the unneeded numerical percent
+		progPercent.innerHTML = '';
+
+		// force the width of the percent bar to 100% to make the user think something is happening
+		progInner.style.width = '100%';
 	}
 }
 appCache.addEventListener('progress', progressEvent, false);

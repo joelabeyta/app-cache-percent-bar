@@ -38,7 +38,7 @@ http://www.html5rocks.com/en/tutorials/appcache/beginner/
 Also this:
 http://www.whatwg.org/specs/web-apps/current-work/
 
-TODO
+NOTICE
 ____________
 
-Doesn't work in Firefox. Seems like Firefox handles the Applicaiton Cache Events differently.
+This script includes a simple visual fallback for Firefox, as Firefox doesn't provide any kind of data about the total number of files into the 'progress' event.
